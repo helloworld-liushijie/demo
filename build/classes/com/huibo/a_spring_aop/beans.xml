@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<!-- 创建目标类 -->
+	<bean id="userServiceId" class="com.huibo.a_spring_aop.UserServiceImpl"></bean>
+	
+	<!-- 创建切面类 -->
+	<bean id="myAspectId" class="com.huibo.a_spring_aop.MyAspect"></bean>
+	
+	<!-- 创建代理类 -->
+	<!-- <bean id="proxyFactoryBeanId" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="interfaces" value="com.huibo.spring_aop_proxy.UserService"></property>
+		<property name="target" ref="userServiceId"></property>
+		此处使用value,不使用ref
+		<property name="interceptorNames" value="myAspectId"></property>
+	</bean> -->
+	
+	<!-- 切面编程 
+		1.导入命名空间
+		2.使用<aop:config>配置
+			<aop:pointcut>:切入点	从目标对象获得具体方法
+			<aop:advisor>	特殊的切面，只有一个通知和一个切入点
+				advice-ref:通知引用
+				point-ref:切入点引用
+		3.切入点表达式
+			execution(		* 			com.huibo.a_spring_aop.		*		.*				(..))
+			选择方法	  返回值任意				包					类名任意		方法名任意		参数任意
+		4.proxy-target-class="true" 表示声明使用cglib
+	-->
+	<aop:config proxy-target-class="false">
+		<aop:pointcut expression="execution(* com.huibo.a_spring_aop.*.*(..))" id="myPointCut"/>
+		<aop:advisor advice-ref="myAspectId" pointcut-ref="myPointCut"/>
+	</aop:config>
+</beans>
