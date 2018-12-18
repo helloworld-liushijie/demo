@@ -7,7 +7,7 @@ public class TestApi {
 	
 	public static void main(String[] args) {
 		
-		//创建连接池(数据源) dbcp
+		//配置连接池(数据源) dbcp
 		BasicDataSource dataSource = new BasicDataSource();
 		
 		//基本4项

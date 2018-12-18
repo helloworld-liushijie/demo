@@ -8,12 +8,12 @@ public class User {
 	private Integer Id;
 	
 	/**
-	 * ĞÕÃû
+	 * å§“å
 	 */
 	private String username;
 	
 	/**
-	 * ÃÜÂë
+	 * å¯†ç 
 	 */
 	private String  password;
 
