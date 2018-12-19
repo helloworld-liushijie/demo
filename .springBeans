@@ -9,6 +9,7 @@
 	<configs>
 		<config>src/com/huibo/spring_aop_proxy/bean.xml</config>
 		<config>src/com/huibo/adviser_aop/bean.xml</config>
+		<config>src/com/huibo/dbcp/beans.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

@@ -8,14 +8,18 @@ public class User {
 	private Integer Id;
 	
 	/**
-	 * å§“å
+	 * ÓÃ»§Ãû
 	 */
 	private String username;
 	
 	/**
-	 * å¯†ç 
+	 * ÃÜÂë
 	 */
 	private String  password;
+	
+	public User() {
+		super();
+	}
 
 	public Integer getId() {
 		return Id;
@@ -40,6 +44,9 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "User [Id=" + Id + ", username=" + username + ", password=" + password + "]";
+	}
 }
