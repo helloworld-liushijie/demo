@@ -13,10 +13,16 @@ public class TestDbcp {
 		User user = new User();
 		user.setId(1);
 		user.setUsername("ÍõÄáÂê");
-		user.setPassword("231");
+		user.setPassword("998");
 		String path = "com/huibo/dbcp/beans.xml";
 		ApplicationContext context = new ClassPathXmlApplicationContext(path);
 		UserDao userDao = (UserDao)context.getBean("userDaoId");
-		userDao.update(user);
+		/*List<User> users = userDao.findAll();
+		for (User us : users) {
+			System.out.println(us);
+		}*/
+		//userDao.update(user);
+		User userMap = userDao.getById(3);
+		System.out.println(userMap);
 	}
 }

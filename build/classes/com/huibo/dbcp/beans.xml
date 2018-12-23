@@ -11,21 +11,22 @@
 		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 	
+	<!-- 加载配置文件
+		classpath:表示类路径下(即src下)
+		在配置文件中通过${key}获取数据
+	 -->
+	<context:property-placeholder location="classpath:com/huibo/dbcp/jdbc.properties"/>
+	
 	<!-- 配置数据源 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
-		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-		<property name="url" value="jdbc:mysql://localhost:3306/test?characterEncoding=utf8"></property>
-		<property name="username" value="root"></property>
-		<property name="password" value="1234"></property>
-	</bean>
-	
-	<!-- 配置模板 -->
-	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
-		<property name="dataSource" ref="dataSource"></property>
+		<property name="driverClassName" value="${jdbc.driverClassName}"></property>
+		<property name="url" value="${jdbc.url}"></property>
+		<property name="username" value="${jdbc.username}"></property>
+		<property name="password" value="${jdbc.password}"></property>
 	</bean>
 	
 	<!-- dao -->
 	<bean id="userDaoId" class="com.huibo.dbcp.UserDao">
-		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+		<property name="dataSource" ref="dataSource"></property>
 	</bean>
 </beans>
