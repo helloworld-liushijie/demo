@@ -17,7 +17,7 @@ public class Count {
 				for (int j = 0; j < str.length()-1; j++) {
 					if(str.charAt(i) == str.charAt(j)) {
 						count++;
-					}
+					} 
 				}
 				map.put(str.charAt(i)+"出现次数:", count);
 			}
