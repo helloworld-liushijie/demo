@@ -1,8 +1,7 @@
 package com.huibo.airth;
 
-/**
- * ½×³ËËã·¨
- * @author ÁõÊÀ½Ü
+/** 
+ * ½×³ËËã·¨ * @author ÁõÊÀ½Ü
  */
 public class Factorial {
 	public static void main(String[] args) {
