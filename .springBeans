@@ -11,6 +11,8 @@
 		<config>src/com/huibo/adviser_aop/bean.xml</config>
 		<config>src/com/huibo/dbcp/beans.xml</config>
 		<config>src/com/huibo/transfer/service/applicationContext.xml</config>
+		<config>src/com/huibo/autowired/applicationContext.xml</config>
+		<config>src/com/huibo/resource_3_3/applicationContext.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

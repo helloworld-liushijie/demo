@@ -5,8 +5,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="js/addUser.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 </head>
 <body>
-	<a href="${pageContext.request.contextPath}/HelloServlet">Spring容器的获得</a>
+	<%-- <a href="${pageContext.request.contextPath}/HelloServlet">Spring容器的获得</a> --%>
+	
+	<form id="user_form"  method="post">
+		姓名:<input id='userName' type="text" name="name"/><br>
+		<input type='button' value="提交" onclick="addUser()"/>
+	</form> 
 </body>
 </html>
