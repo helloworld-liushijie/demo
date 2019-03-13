@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -21,5 +22,11 @@ public class UserController {
 		view.addObject("message","aaa");
 		System.out.println(name);
 		return view; 
+	}
+	
+	@RequestMapping("/upload_file")
+	public ModelAndView uploadFile(MultipartFile file) {
+		System.out.println(2);
+		return null;
 	}
 }
