@@ -33,9 +33,8 @@ public class CachePool {
 		Integer i7 = 100;
 		Integer i8 = 100;
 		System.out.println(i7 == i8);//true
-		
-		byte[] b = {'h','e','l','l','o'};
-		String str = "hello";
-		System.out.println(String.valueOf(b) == str);
+		short s1 = 1;
+		s1 += 1;
+		System.out.println(s1);
 	}
 }
