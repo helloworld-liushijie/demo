@@ -5,7 +5,6 @@ package com.huibo.cache;
  * @author ¡ı ¿Ω‹
  */
 public class CachePool {
-	
 	public static void main(String[] args) {
 		Integer i1 = new Integer(200);
 		Integer i2 = new Integer(200);
@@ -36,5 +35,8 @@ public class CachePool {
 		short s1 = 1;
 		s1 += 1;
 		System.out.println(s1);
+		Integer i9 = new Integer(1);
+		Integer i10 = new Integer(1);
+		System.out.println(i9.equals(i10));
 	}
 }
